@@ -1,0 +1,417 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2C2F33; /* Discord Dark Grey */
+    color: #FFFFFF; /* White */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #FFFFFF; /* White */
+    text-shadow: 0 0 5px #7289DA; /* Discord Blue shadow */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column; /* One card per column */
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #7289DA; /* Discord Darker Grey */
+    border: 1px solid #7289DA; /* Discord Blue border */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Neon shadow */
+    transition: transform 0.3s; /* Card hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Card hover effect */
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons evenly */
+    color: #FFFFFF; /* White for button text */
+}
+
+
+
+
+
+
+
+
+
+/* Details and Form Container */
+.details-container, .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2C2F33; /* Discord Dark Grey */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); /* Neon cyan shadow */
+}
+
+/* Button Styles */
+button {
+    background-color: #078f32; /* Green background */
+    color: #fff; /* White text */
+    border: 0.5px solid #f8f1f1; /* Neon white border */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #2882dc; /* Change to blue on hover */
+    color: #fff; /* Keep text white */
+    border-color: #7289DA; /* Blue border on hover */
+}
+
+
+
+
+/* Sidebar Navigation */
+.sidebar {
+    background-color: #2C2F33; /* Discord Dark Grey */
+    padding: 1rem;
+    width: 200px;
+    height: 100vh;
+    color: #fff; /* Neon white */
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Smooth transition for closing */
+    transform: translateX(-100%); /* Hidden by default */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Show sidebar */
+}
+
+.menu-link {
+    color: #fff; /* Neon white */
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    transition: background-color 0.3s, color 0.3s; /* Hover effect */
+}
+
+.menu-link:hover {
+    background-color: rgba(114, 137, 218, 0.2); /* Light blue hover effect */
+    color: #7289DA; /* Change text color to Discord Blue on hover */
+}
+
+.active-link {
+    font-weight: bold;
+    color: #7289DA; /* Highlight active link with Discord Blue */
+}
+
+
+
+
+
+
+
+
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #40444B; /* Discord Dark Grey */
+    color: #fff; /* Neon white */
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(114, 137, 218, 0.5); /* Soft blue shadow */
+    z-index: 1000;
+}
+
+/* Popup Styles */
+.edit-book-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2C2F33; /* Discord Dark Grey */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(114, 137, 218, 0.5); /* Soft blue shadow */
+    z-index: 1000;
+    max-width: 400px;
+}
+
+/* Loading and Other Text */
+.loading {
+    text-align: center;
+    color: #fff; /* Neon white */
+    font-weight: bold;
+}
+
+/* Form Container (Popup Styling) */
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2C2F33; /* Discord Dark Grey */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(114, 137, 218, 0.5); /* Soft blue shadow */
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff; /* Neon white */
+}
+
+
+
+
+
+
+/* Form Input Styling */
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff; /* Neon white */
+    background-color: #40444B; /* Discord Dark Grey */
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #7289DA; /* Discord Blue */
+    outline: none;
+    background-color: #2C2F33; /* Slightly darker on focus */
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add and Update Button Styling */
+.button-group button[type="submit"] {
+    background-color: #2882dc; /* Discord Blue */
+    color: #fff; /* Neon white */
+}
+
+.button-group button[type="submit"]:hover {
+    background-color: #078f32; /* Darker shade on hover */
+}
+
+/* Cancel Button Styling */
+.button-group button[type="button"] {
+    background-color: #2882dc; /* Dark grey */
+    color: #fff; /* Neon white */
+}
+
+.button-group button[type="button"]:hover {
+    background-color: #078f32; /* Lighter grey on hover */
+}
+
+
+
+
+
+/* styles.css */
+
+/* Navigation Menu Styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #374b95; /* Dark background for the menu */
+    padding: 1rem;
+    position: fixed; /* Fixed position for the menu */
+    top: 0;
+    left: 0; /* Aligns to the left */
+    width: 200px; /* Width of the menu */
+    height: 100vh; /* Full height */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+    z-index: 100; /* Ensures the menu is above other elements */
+}
+
+.navbar-title {
+    color: #fff; /* Neon white for title */
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Larger font size for the title */
+    text-align: center;
+}
+
+.menu-link {
+    color: #f5f5f5; /* Neon white */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0.5rem 0; /* Margin for spacing */
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+    color: #fff; /* Highlight text on hover */
+}
+
+.active-link {
+    font-weight: bold; /* Bold for active link */
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight active link */
+}
+
+/* Adjust for main content */
+.main-content {
+    margin-left: 220px; /* To ensure the main content doesn't overlap with the navbar */
+    padding: 1rem; /* Padding for the content area */
+}
+
+
+
+
+
+
+/* Edit form */
+
+/* Styles for Edit Book Form */
+.edit-book-form {
+    position: fixed; /* Fixed position for the form */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering transform */
+    background-color: #2C2F33; /* Discord dark background for the Edit form */
+    padding: 2rem; /* Padding inside form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3); /* Neon shadow for depth */
+    z-index: 1000; /* Ensure above other elements */
+    max-width: 500px; /* Maximum width for the form */
+    width: 100%; /* Full width up to max */
+}
+
+/* Form Title for Edit */
+.edit-book-form h2 {
+    margin-bottom: 20px; /* Margin below title */
+    font-size: 24px; /* Font size for title */
+    color: #fff; /* Neon white for contrast */
+    text-align: center; /* Center title */
+}
+
+/* Label Styles for Form Inputs */
+.edit-book-form label {
+    font-size: 16px; /* Font size for labels */
+    margin-bottom: 8px; /* Margin below labels */
+    color: #ffffff; /* Light text color for readability */
+    display: block; /* Block display for labels */
+}
+
+/* Input and Textarea Styling for Edit Form */
+.edit-book-form input,
+.edit-book-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Margin below inputs */
+    border: 1px solid #fff; /* White border for inputs */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+    color: #ffffff; /* Black text for inputs */
+    background-color: #2C2F33; /* White background for inputs */
+    transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+.edit-book-form input:focus,
+.edit-book-form textarea:focus {
+    border-color: #7289DA; /* Discord Blue border on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button Group for Edit Form */
+.edit-book-form .button-group {
+    display: flex; /* Flexbox for button group */
+    justify-content: space-between; /* Distribute buttons evenly */
+    margin-top: 20px; /* Margin above button group */
+}
+
+/* Save and Update Button Styles */
+.edit-book-form .button-group button[type="submit"] {
+    background-color: #078f32; 
+    color: #fff; /* Neon white text */
+    border: 1px solid #f6f6f6; /* Light grey border */
+    flex: 1; /* Allow button to grow */
+    margin-right: 10px; /* Margin between buttons */
+}
+
+.edit-book-form .button-group button[type="submit"]:hover {
+    background-color: #2882dc;
+    
+}
+
+/* Cancel Button Styling */
+.edit-book-form .button-group button[type="button"] {
+    background-color: #078f32; /* Medium dark background for cancel button */
+    color: #fff; /* Neon white text */
+    flex: 1; /* Allow button to grow */
+}
+
+.edit-book-form .button-group button[type="button"]:hover {
+    background-color: #2882dc; /* Lighten background on hover */
+}
+
+
+
+
+
+
+
+
+
+/* src/styles/Notification.css */
+
+.notification {
+    position: fixed; /* Fixed positioning to stay in place */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the box */
+    background-color: rgba(48, 109, 201, 0.9); /* Background color */
+    color: white; /* White text for contrast */
+    padding: 15px 20px; /* Padding around the text */
+    border-radius: 5px; /* Slightly rounded corners for a softer look */
+    z-index: 1000; /* Ensures it's on top of other elements */
+    transition: opacity 0.5s ease, top 0.5s ease; /* Smooth transition effects */
+    opacity: 1; /* Default opacity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow effect for depth */
+    max-width: 200px; /* Set maximum width */
+    width: 90%; /* Set width to 90% of the screen */
+}
+
+/* Fade-out effect for notifications */
+.notification.fade-out {
+    opacity: 0; /* Fade out effect */
+    top: 40%; /* Adjust position during fade-out, if needed */
+    transform: translate(-50%, -50%); /* Maintain centering */
+}
