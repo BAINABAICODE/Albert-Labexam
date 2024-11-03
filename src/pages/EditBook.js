@@ -51,13 +51,15 @@ const EditBook = ({ onNotify }) => {
     return (
         <div className="edit-book-container">
             <h1>Edit Books</h1>
-            <div className="book-list">
+            <div className="edit-book-card-container">
                 {books.map((book) => (
-                    <div key={book.id} className="card">
+                    <div key={book.id} className="edit-book-card">
                         <h3>{book.title}</h3>
                         <p>Author: {book.author}</p>
-                        <button onClick={() => handleEdit(book)}>Edit</button>
-                        <button onClick={() => handleDelete(book.id)}>Delete</button>
+                        <div className="edit-book-card-actions">
+                            <button onClick={() => handleEdit(book)}>Edit</button>
+                            <button onClick={() => handleDelete(book.id)}>Delete</button>
+                        </div>
                     </div>
                 ))}
             </div>
